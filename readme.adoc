@@ -1,0 +1,13 @@
+= Cron expression parser
+
+https://crontab.guru[Some] parsers / specs have very relaxed validation rules and allows eg:
+`* \*,*/26 * * *` while https://www.freeformatter.com/cron-expression-generator-quartz.html[others]
+treat it as an error. The following code also treats such expressions as an error.
+
+== Build & run
+
+With java 11, from the project directory:
+
+ ./gradlew build shadowJar
+
+ java -jar ./build/libs/cron-all.jar "* * * * * /bin/echo"
